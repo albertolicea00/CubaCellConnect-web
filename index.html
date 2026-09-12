@@ -450,6 +450,11 @@
           </div>
         </div>
 
+        <div class="text-center mb-6">
+          <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Catálogo de códigos</h3>
+          <p class="text-gray-500 dark:text-gray-400 mt-2">El archivo fuente que alimenta la app, listo para descargar.</p>
+        </div>
+
         <!-- Download catalog button -->
         <div
           class="mb-8 bg-white dark:bg-gray-800 rounded-2xl p-5 border border-gray-200 dark:border-gray-700 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
@@ -470,6 +475,28 @@
             </svg>
             Descargar catálogo
           </a>
+        </div>
+
+        <!-- Download database button — no public URL yet, disabled until one exists -->
+        <div
+          class="mb-8 bg-white dark:bg-gray-800 rounded-2xl p-5 border border-gray-200 dark:border-gray-700 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm opacity-75">
+          <div class="flex items-start gap-4">
+            <svg class="w-8 h-8 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>
+            <div>
+              <p class="font-bold text-gray-900 dark:text-white">Directorio telefónico de ETECSA — <code
+                  class="text-navy dark:text-accent font-mono text-sm">database.sqlite</code></p>
+              <p class="text-sm text-gray-500 dark:text-gray-400 mt-0.5">Base de datos filtrada, sin relación con el catálogo de códigos USSD. Aún no tiene una URL pública para descargar.</p>
+            </div>
+          </div>
+          <button type="button" disabled
+            title="Aún no disponible — pendiente de publicar una URL pública"
+            class="flex-shrink-0 inline-flex items-center gap-2 bg-gray-200 dark:bg-gray-700 text-gray-400 dark:text-gray-500 font-bold px-5 py-2.5 rounded-xl text-sm whitespace-nowrap cursor-not-allowed">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            Próximamente
+          </button>
         </div>
       </div>
     </section>
