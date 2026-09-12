@@ -138,8 +138,6 @@
           funciona</a>
         <a href="#manual" @click="mobileMenuOpen = false"
           class="block px-3 py-3 rounded-xl text-base font-medium text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800">Manual de uso</a>
-        <a href="#carrier" @click="mobileMenuOpen = false"
-          class="block px-3 py-3 rounded-xl text-base font-medium text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800">Compatibilidad</a>
         <a href="/dial.html" @click="mobileMenuOpen = false"
           class="block px-3 py-3 rounded-xl text-base font-medium text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800">Marcador USSD</a>
         <a href="#faq" @click="mobileMenuOpen = false"
@@ -475,6 +473,161 @@
           </div>
         </div>
 
+        <!-- USSD codes warning marquee -->
+        <div class="overflow-hidden mb-12 border-y border-navy/30 dark:border-accent/30 bg-navy/5 dark:bg-accent/10 py-3" style="width:100vw;margin-left:calc(50% - 50vw)">
+          <div class="marquee-track flex gap-12 whitespace-nowrap text-sm font-medium text-navy dark:text-accent">
+            <span class="marquee-content">
+              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/></svg> Los códigos USSD los gestiona ETECSA y suelen ser bastante estables en el tiempo
+              &nbsp;·&nbsp;
+              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg> El catálogo vive en <code>ussd_codes.json</code>, dentro del propio repo de la app
+              &nbsp;·&nbsp;
+              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg> Si un código deja de funcionar, se corrige ahí primero en <code>MyUSSDCodes-collection</code> y se sincroniza a esta app
+              &nbsp;·&nbsp;
+              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg> Descarga la última versión del catálogo desde GitHub &nbsp;·&nbsp;
+              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg> Un chequeo semanal automático (<code>ussd-sync-check</code>) avisa si este repo se desincroniza &nbsp;·&nbsp;
+              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m1.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg> ¿Encontraste un código nuevo o desactualizado? Abre un PR y ayuda a la comunidad
+              &nbsp;·&nbsp;
+            </span>
+            <span class="marquee-content" aria-hidden="true">
+              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/></svg> Los códigos USSD los gestiona ETECSA y suelen ser bastante estables en el tiempo
+              &nbsp;·&nbsp;
+              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg> El catálogo vive en <code>ussd_codes.json</code>, dentro del propio repo de la app
+              &nbsp;·&nbsp;
+              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg> Si un código deja de funcionar, se corrige ahí primero y se sincroniza a esta app
+              &nbsp;·&nbsp;
+              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg> Descarga la última versión del catálogo desde GitHub &nbsp;·&nbsp;
+              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg> Un chequeo semanal automático (<code>ussd-sync-check</code>) avisa si este repo se desincroniza &nbsp;·&nbsp;
+              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m1.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg> ¿Encontraste un código nuevo o desactualizado? Abre un PR y ayuda a la comunidad
+              &nbsp;·&nbsp;
+            </span>
+          </div>
+        </div>
+
+        <!-- Download catalog button -->
+        <div
+          class="mb-8 bg-white dark:bg-gray-800 rounded-2xl p-5 border border-gray-200 dark:border-gray-700 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
+          <div class="flex items-start gap-4">
+            <svg class="w-8 h-8 text-navy dark:text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            <div>
+              <p class="font-bold text-gray-900 dark:text-white">Catálogo de códigos USSD — <code
+                  class="text-navy dark:text-accent font-mono text-sm">ussd_codes.json</code></p>
+              <p class="text-sm text-gray-500 dark:text-gray-400 mt-0.5">El archivo que alimenta la app: categorías y todos los códigos organizados. Actualizable sin recompilar.</p>
+            </div>
+          </div>
+          <a href="https://raw.githubusercontent.com/albertolicea00/cubacell-connect/refs/heads/main/CubacellConnect/Resources/ussd_codes.json"
+            download="ussd_codes.json" target="_blank" rel="noopener"
+            class="flex-shrink-0 inline-flex items-center gap-2 bg-navy hover:bg-navy/80 text-white font-bold px-5 py-2.5 rounded-xl text-sm transition-all whitespace-nowrap shadow shadow-navy/30">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            Descargar catálogo
+          </a>
+        </div>
+
+
+        <!-- ════════════════════════════════════════
+            VENTAJAS
+        ════════════════════════════════════════ -->
+        <section id="advantages" class="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-950 relative overflow-hidden">
+          <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+            <div class="absolute top-0 right-1/4 w-96 h-96 rounded-full bg-accent opacity-[0.10] dark:opacity-[0.05] blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-navy opacity-[0.11] dark:opacity-[0.06] blur-3xl"></div>
+          </div>
+          <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+              <span class="section-badge">Ventajas</span>
+              <h2 class="section-title">¿Por qué Cuba-cell Connect?</h2>
+              <p class="section-subtitle">Comparado con otras opciones disponibles en Cuba.</p>
+            </div>
+            <!--
+            <div
+              class="bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-100 dark:border-gray-700 flex flex-col sm:flex-row gap-6 items-center justify-around text-center mb-8">
+              <div class="flex items-center gap-3">
+                <svg class="w-8 h-8 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 8.25h3"/></svg>
+                <div class="text-left">
+                  <p class="font-bold">iOS 17.0+</p>
+                  <p class="text-sm text-gray-400">iPhone exclusivamente</p>
+                </div>
+              </div>
+              <div class="w-px h-10 bg-gray-200 dark:bg-gray-700 hidden sm:block"></div>
+              <div class="flex items-center gap-3">
+                <svg class="w-8 h-8 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/></svg>
+                <div class="text-left">
+                  <p class="font-bold">Red ETECSA</p>
+                  <p class="text-sm text-gray-400">Sin internet · USSD</p>
+                </div>
+              </div>
+              <div class="w-px h-10 bg-gray-200 dark:bg-gray-700 hidden sm:block"></div>
+              <div class="flex items-center gap-3">
+                <svg class="w-8 h-8 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
+                <div class="text-left">
+                  <p class="font-bold">Open Source</p>
+                  <p class="text-sm text-gray-400">MIT License · GitHub</p>
+                </div>
+              </div>
+            </div>
+            -->
+            <div class="rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm overflow-hidden">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="bg-gray-900 dark:bg-gray-800 text-white">
+                    <th class="px-3 sm:px-6 py-3 text-left font-semibold">Característica</th>
+                    <th class="px-3 sm:px-6 py-3 text-center font-semibold text-accent">Cuba-cell Connect</th>
+                    <th class="px-3 sm:px-6 py-3 text-center font-semibold">Marcado manual</th>
+                    <th class="hidden sm:table-cell px-6 py-3 text-center font-semibold">Apps similares</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
+                  <tr class="bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                    <td class="px-3 sm:px-6 py-2.5 font-medium">100% Gratis y sin anuncios</td>
+                    <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></td>
+                    <td class="px-3 sm:px-6 py-2.5 text-center text-accent"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></td>
+                    <td class="hidden sm:table-cell px-6 py-2.5 text-center text-yellow-400">Parcial</td>
+                  </tr>
+                  <tr class="bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                    <td class="px-3 sm:px-6 py-2.5 font-medium">Funciona 100% sin internet</td>
+                    <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></td>
+                    <td class="px-3 sm:px-6 py-2.5 text-center text-accent"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></td>
+                    <td class="hidden sm:table-cell px-6 py-2.5 text-center text-yellow-400">Parcial</td>
+                  </tr>
+                  <tr class="bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                    <td class="px-3 sm:px-6 py-2.5 font-medium">Entrada asistida para códigos con datos variables</td>
+                    <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></td>
+                    <td class="px-3 sm:px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg></td>
+                    <td class="hidden sm:table-cell px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg></td>
+                  </tr>
+                  <tr class="bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                    <td class="px-3 sm:px-6 py-2.5 font-medium">Nemotecnia para recordar códigos</td>
+                    <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></td>
+                    <td class="px-3 sm:px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg></td>
+                    <td class="hidden sm:table-cell px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg></td>
+                  </tr>
+                  <tr class="bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                    <td class="px-3 sm:px-6 py-2.5 font-medium">Copiar código al portapapeles</td>
+                    <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></td>
+                    <td class="px-3 sm:px-6 py-2.5 text-center text-gray-400">–</td>
+                    <td class="hidden sm:table-cell px-6 py-2.5 text-center text-yellow-400">Parcial</td>
+                  </tr>
+                  <tr class="bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                    <td class="px-3 sm:px-6 py-2.5 font-medium">Catálogo centralizado con verificación automática</td>
+                    <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></td>
+                    <td class="px-3 sm:px-6 py-2.5 text-center text-gray-400">–</td>
+                    <td class="hidden sm:table-cell px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg></td>
+                  </tr>
+                  <tr class="bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                    <td class="px-3 sm:px-6 py-2.5 font-medium">Código abierto</td>
+                    <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></td>
+                    <td class="px-3 sm:px-6 py-2.5 text-center text-gray-400">–</td>
+                    <td class="hidden sm:table-cell px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+
         <!-- ════════════════════════════════════════
              MANUAL DE USUARIO INTEGRADO
         ════════════════════════════════════════ -->
@@ -613,186 +766,6 @@
     </section>
 
     <!-- ════════════════════════════════════════
-         COMPATIBILIDAD (single carrier — ETECSA)
-    ════════════════════════════════════════ -->
-    <section id="carrier" class="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-[rgb(12,16,26)] relative overflow-hidden">
-      <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-        <div class="absolute top-0 left-1/3 w-80 h-80 rounded-full bg-navy opacity-[0.10] dark:opacity-[0.06] blur-3xl"></div>
-        <div class="absolute bottom-1/4 right-0 w-64 h-64 rounded-full bg-accent opacity-[0.13] dark:opacity-[0.07] blur-3xl"></div>
-      </div>
-      <div class="max-w-5xl mx-auto">
-        <div class="text-center mb-10">
-          <span class="section-badge">Compatibilidad</span>
-          <h2 class="section-title">Cubacel (ETECSA)</h2>
-        </div>
-
-        <!-- USSD codes warning marquee -->
-        <div class="overflow-hidden mb-12 border-y border-navy/30 dark:border-accent/30 bg-navy/5 dark:bg-accent/10 py-3" style="width:100vw;margin-left:calc(50% - 50vw)">
-          <div class="marquee-track flex gap-12 whitespace-nowrap text-sm font-medium text-navy dark:text-accent">
-            <span class="marquee-content">
-              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/></svg> Los códigos USSD los gestiona ETECSA y suelen ser bastante estables en el tiempo
-              &nbsp;·&nbsp;
-              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg> El catálogo vive en <code>ussd_codes.json</code>, dentro del propio repo de la app
-              &nbsp;·&nbsp;
-              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg> Si un código deja de funcionar, se corrige ahí primero en <code>MyUSSDCodes-collection</code> y se sincroniza a esta app
-              &nbsp;·&nbsp;
-              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg> Descarga la última versión del catálogo desde GitHub &nbsp;·&nbsp;
-              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg> Un chequeo semanal automático (<code>ussd-sync-check</code>) avisa si este repo se desincroniza &nbsp;·&nbsp;
-              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m1.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg> ¿Encontraste un código nuevo o desactualizado? Abre un PR y ayuda a la comunidad
-              &nbsp;·&nbsp;
-            </span>
-            <span class="marquee-content" aria-hidden="true">
-              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/></svg> Los códigos USSD los gestiona ETECSA y suelen ser bastante estables en el tiempo
-              &nbsp;·&nbsp;
-              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg> El catálogo vive en <code>ussd_codes.json</code>, dentro del propio repo de la app
-              &nbsp;·&nbsp;
-              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg> Si un código deja de funcionar, se corrige ahí primero y se sincroniza a esta app
-              &nbsp;·&nbsp;
-              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg> Descarga la última versión del catálogo desde GitHub &nbsp;·&nbsp;
-              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg> Un chequeo semanal automático (<code>ussd-sync-check</code>) avisa si este repo se desincroniza &nbsp;·&nbsp;
-              <svg class="inline w-3.5 h-3.5 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m1.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg> ¿Encontraste un código nuevo o desactualizado? Abre un PR y ayuda a la comunidad
-              &nbsp;·&nbsp;
-            </span>
-          </div>
-        </div>
-
-        <div class="flex justify-center mb-12">
-          <div class="carrier-card max-w-xs w-full" style="border-color: rgba(0,0,102,.4)">
-            <div class="w-14 h-14 rounded-xl bg-navy/10 dark:bg-accent/10 flex items-center justify-center mb-2">
-              <svg class="w-8 h-8 text-navy dark:text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 8.25h3"/></svg>
-            </div>
-            <h3 class="font-bold text-center">ETECSA (Cubacel)</h3>
-            <p class="text-xs text-center text-gray-400 mt-1">*222# · *222*328# · *662*{tarjeta}#</p>
-            <span class="carrier-badge" style="background:rgba(0,153,204,.15);color:#0099cc">Soporte completo</span>
-          </div>
-        </div>
-
-        <!-- Download catalog button -->
-        <div
-          class="mb-8 bg-white dark:bg-gray-800 rounded-2xl p-5 border border-gray-200 dark:border-gray-700 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
-          <div class="flex items-start gap-4">
-            <svg class="w-8 h-8 text-navy dark:text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-            <div>
-              <p class="font-bold text-gray-900 dark:text-white">Catálogo de códigos USSD — <code
-                  class="text-navy dark:text-accent font-mono text-sm">ussd_codes.json</code></p>
-              <p class="text-sm text-gray-500 dark:text-gray-400 mt-0.5">El archivo que alimenta la app: categorías y todos los códigos organizados. Actualizable sin recompilar.</p>
-            </div>
-          </div>
-          <a href="https://raw.githubusercontent.com/albertolicea00/cubacell-connect/refs/heads/main/CubacellConnect/Resources/ussd_codes.json"
-            download="ussd_codes.json" target="_blank" rel="noopener"
-            class="flex-shrink-0 inline-flex items-center gap-2 bg-navy hover:bg-navy/80 text-white font-bold px-5 py-2.5 rounded-xl text-sm transition-all whitespace-nowrap shadow shadow-navy/30">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-            </svg>
-            Descargar catálogo
-          </a>
-        </div>
-
-        <div
-          class="bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-100 dark:border-gray-700 flex flex-col sm:flex-row gap-6 items-center justify-around text-center">
-          <div class="flex items-center gap-3">
-            <svg class="w-8 h-8 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 8.25h3"/></svg>
-            <div class="text-left">
-              <p class="font-bold">iOS 17.0+</p>
-              <p class="text-sm text-gray-400">iPhone exclusivamente</p>
-            </div>
-          </div>
-          <div class="w-px h-10 bg-gray-200 dark:bg-gray-700 hidden sm:block"></div>
-          <div class="flex items-center gap-3">
-            <svg class="w-8 h-8 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/></svg>
-            <div class="text-left">
-              <p class="font-bold">Red ETECSA</p>
-              <p class="text-sm text-gray-400">Sin internet · USSD</p>
-            </div>
-          </div>
-          <div class="w-px h-10 bg-gray-200 dark:bg-gray-700 hidden sm:block"></div>
-          <div class="flex items-center gap-3">
-            <svg class="w-8 h-8 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
-            <div class="text-left">
-              <p class="font-bold">Open Source</p>
-              <p class="text-sm text-gray-400">MIT License · GitHub</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ════════════════════════════════════════
-         VENTAJAS
-    ════════════════════════════════════════ -->
-    <section id="advantages" class="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-950 relative overflow-hidden">
-      <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-        <div class="absolute top-0 right-1/4 w-96 h-96 rounded-full bg-accent opacity-[0.10] dark:opacity-[0.05] blur-3xl"></div>
-        <div class="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-navy opacity-[0.11] dark:opacity-[0.06] blur-3xl"></div>
-      </div>
-      <div class="max-w-5xl mx-auto">
-        <div class="text-center mb-16">
-          <span class="section-badge">Ventajas</span>
-          <h2 class="section-title">¿Por qué Cuba-cell Connect?</h2>
-          <p class="section-subtitle">Comparado con otras opciones disponibles en Cuba.</p>
-        </div>
-
-        <div class="rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm overflow-hidden">
-          <table class="w-full text-sm">
-            <thead>
-              <tr class="bg-gray-900 dark:bg-gray-800 text-white">
-                <th class="px-3 sm:px-6 py-3 text-left font-semibold">Característica</th>
-                <th class="px-3 sm:px-6 py-3 text-center font-semibold text-accent">Cuba-cell Connect</th>
-                <th class="px-3 sm:px-6 py-3 text-center font-semibold">Marcado manual</th>
-                <th class="hidden sm:table-cell px-6 py-3 text-center font-semibold">Apps similares</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
-              <tr class="bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/50">
-                <td class="px-3 sm:px-6 py-2.5 font-medium">100% Gratis y sin anuncios</td>
-                <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></td>
-                <td class="px-3 sm:px-6 py-2.5 text-center text-accent"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></td>
-                <td class="hidden sm:table-cell px-6 py-2.5 text-center text-yellow-400">Parcial</td>
-              </tr>
-              <tr class="bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/50">
-                <td class="px-3 sm:px-6 py-2.5 font-medium">Funciona 100% sin internet</td>
-                <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></td>
-                <td class="px-3 sm:px-6 py-2.5 text-center text-accent"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></td>
-                <td class="hidden sm:table-cell px-6 py-2.5 text-center text-yellow-400">Parcial</td>
-              </tr>
-              <tr class="bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/50">
-                <td class="px-3 sm:px-6 py-2.5 font-medium">Entrada asistida para códigos con datos variables</td>
-                <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></td>
-                <td class="px-3 sm:px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg></td>
-                <td class="hidden sm:table-cell px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg></td>
-              </tr>
-              <tr class="bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/50">
-                <td class="px-3 sm:px-6 py-2.5 font-medium">Nemotecnia para recordar códigos</td>
-                <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></td>
-                <td class="px-3 sm:px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg></td>
-                <td class="hidden sm:table-cell px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg></td>
-              </tr>
-              <tr class="bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/50">
-                <td class="px-3 sm:px-6 py-2.5 font-medium">Copiar código al portapapeles</td>
-                <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></td>
-                <td class="px-3 sm:px-6 py-2.5 text-center text-gray-400">–</td>
-                <td class="hidden sm:table-cell px-6 py-2.5 text-center text-yellow-400">Parcial</td>
-              </tr>
-              <tr class="bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/50">
-                <td class="px-3 sm:px-6 py-2.5 font-medium">Catálogo centralizado con verificación automática</td>
-                <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></td>
-                <td class="px-3 sm:px-6 py-2.5 text-center text-gray-400">–</td>
-                <td class="hidden sm:table-cell px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg></td>
-              </tr>
-              <tr class="bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/50">
-                <td class="px-3 sm:px-6 py-2.5 font-medium">Código abierto</td>
-                <td class="px-3 sm:px-6 py-2.5 text-center text-accent font-bold"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></td>
-                <td class="px-3 sm:px-6 py-2.5 text-center text-gray-400">–</td>
-                <td class="hidden sm:table-cell px-6 py-2.5 text-center text-red-400"><svg class="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <!-- ════════════════════════════════════════
          FAQ
     ════════════════════════════════════════ -->
     <section id="faq" class="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-[rgb(12,16,26)] relative overflow-hidden">
@@ -858,6 +831,13 @@
           <div class="roadmap-item roadmap-done"><span class="roadmap-status"
               style="background:rgba(0,153,204,.15);color:#00708f"><svg class="inline w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg> Listo</span>
             <div>
+              <h4 class="font-semibold text-gray-900 dark:text-white">Favoritos y recientes</h4>
+              <p class="text-sm text-gray-400">Acceso rápido a los códigos que más usas.</p>
+            </div>
+          </div>
+          <div class="roadmap-item roadmap-done"><span class="roadmap-status"
+              style="background:rgba(0,153,204,.15);color:#00708f"><svg class="inline w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg> Listo</span>
+            <div>
               <h4 class="font-semibold text-gray-900 dark:text-white">Versión Web Temporal</h4>
               <p class="text-sm text-gray-400">Puedes usar el marcador desde el navegador mientras llega la versión para App Store, funcionando sin conexión.</p>
             </div>
@@ -872,8 +852,8 @@
           <div class="roadmap-item roadmap-planned"><span
               class="roadmap-status bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400"><svg class="inline w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg> Planeado</span>
             <div>
-              <h4 class="font-semibold text-gray-900 dark:text-white">Favoritos y recientes</h4>
-              <p class="text-sm text-gray-400">Acceso rápido a los códigos que más usas.</p>
+              <h4 class="font-semibold text-gray-900 dark:text-white">Directorio ETECSA (Antiguo)</h4>
+              <p class="text-sm text-gray-400">Integración con una base de datos no oficial de números telefónicos difundida alrededor de 2015.</p>
             </div>
           </div>
           <div class="roadmap-item roadmap-planned"><span
@@ -881,13 +861,6 @@
             <div>
               <h4 class="font-semibold text-gray-900 dark:text-white">Actualización remota del catálogo</h4>
               <p class="text-sm text-gray-400">La app en el App Store recibe correcciones de códigos sin esperar una nueva versión.</p>
-            </div>
-          </div>
-          <div class="roadmap-item roadmap-planned"><span
-              class="roadmap-status bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400"><svg class="inline w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg> Planeado</span>
-            <div>
-              <h4 class="font-semibold text-gray-900 dark:text-white">Localización a inglés</h4>
-              <p class="text-sm text-gray-400">Título y detalles del catálogo en variantes localizadas, misma estructura.</p>
             </div>
           </div>
         </div>
@@ -1070,7 +1043,6 @@
             <li><a href="#features" class="footer-link">Funciones</a></li>
             <li><a href="#how-it-works" class="footer-link">Cómo funciona</a></li>
             <li><a href="#manual" class="footer-link">Manual de uso</a></li>
-            <li><a href="#carrier" class="footer-link">Compatibilidad</a></li>
             <li><a href="#faq" class="footer-link">FAQ</a></li>
             <li><a href="#roadmap" class="footer-link">Roadmap</a></li>
           </ul>
