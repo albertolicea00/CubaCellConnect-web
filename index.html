@@ -81,7 +81,6 @@
       </a>
 
       <div class="hidden md:flex items-center gap-6 text-sm text-gray-600 dark:text-gray-400">
-        <a href="#features" class="nav-link">Funciones</a>
         <a href="#how-it-works" class="nav-link">Cómo funciona</a>
         <a href="#manual" class="nav-link">Manual</a>
         <a href="/dial.html" class="nav-link">Marcador USSD</a>
@@ -131,8 +130,6 @@
     <div x-show="mobileMenuOpen" x-transition
       class="md:hidden border-t border-gray-100 dark:border-gray-800 bg-white/95 dark:bg-gray-950/95 backdrop-blur-md">
       <div class="px-4 pt-2 pb-6 space-y-1 shadow-lg">
-        <a href="#features" @click="mobileMenuOpen = false"
-          class="block px-3 py-3 rounded-xl text-base font-medium text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800">Funciones</a>
         <a href="#how-it-works" @click="mobileMenuOpen = false"
           class="block px-3 py-3 rounded-xl text-base font-medium text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800">Cómo
           funciona</a>
@@ -256,188 +253,6 @@
 
       <!-- Seamless bottom section gradient fade -->
       <div class="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-gray-50 dark:from-gray-900 to-transparent pointer-events-none"></div>
-    </section>
-
-    <!-- ════════════════════════════════════════
-         FUNCIONES PRINCIPALES
-    ════════════════════════════════════════ -->
-    <section id="features" class="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-[rgb(12,16,26)] relative">
-      <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-        <div class="absolute top-0 right-0 w-96 h-96 rounded-full bg-accent opacity-[0.12] dark:opacity-[0.06] blur-3xl"></div>
-        <div class="absolute bottom-0 left-1/4 w-80 h-80 rounded-full bg-navy opacity-[0.13] dark:opacity-[0.07] blur-3xl"></div>
-      </div>
-      <div class="max-w-6xl mx-auto">
-        <div class="text-center">
-          <span class="section-badge">Funciones</span>
-          <h2 class="section-title">Todo lo que necesitas para tu línea Cubacel</h2>
-          <p class="section-subtitle">Diseñado para cubanos que saben que el tiempo — y los datos — son valiosos.</p>
-        </div>
-
-        <div x-data="featureSection()" x-ref="pinWrapper" class="relative">
-        <div x-ref="pinInner">
-        <div class="grid lg:grid-cols-2 gap-10 items-center">
-
-          <!-- Feature selector list (left — visible on all breakpoints) -->
-          <div class="space-y-2">
-
-            <button @click="feat = 'catalog'" data-feat="catalog" :class="feat === 'catalog' ? 'feat-active' : 'feat-inactive'"
-              class="feat-btn">
-              <div class="feat-btn-icon"><svg class="w-5 h-5 text-navy dark:text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
-              <div class="text-left">
-                <p class="feat-btn-title">Catálogo completo</p>
-                <p class="feat-btn-desc">Todos los códigos de saldo, planes, compras, transferencias y utilidades — organizados por categoría.</p>
-              </div>
-            </button>
-
-            <button @click="feat = 'onetap'" data-feat="onetap" :class="feat === 'onetap' ? 'feat-active' : 'feat-inactive'"
-              class="feat-btn">
-              <div class="feat-btn-icon"><svg class="w-5 h-5 text-navy dark:text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg></div>
-              <div class="text-left">
-                <p class="feat-btn-title">Marcado en un toque</p>
-                <p class="feat-btn-desc">La app abre el marcador del sistema con el código listo — el <code class="code-inline">#</code> queda correctamente codificado.</p>
-              </div>
-            </button>
-
-            <button @click="feat = 'input'" data-feat="input" :class="feat === 'input' ? 'feat-active' : 'feat-inactive'"
-              class="feat-btn">
-              <div class="feat-btn-icon"><svg class="w-5 h-5 text-navy dark:text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 9h1.5m0 0H15m-4.5 0v6m0 0H15M4.5 9h1.5m10.5 6h1.5M6.75 4.5h10.5A2.25 2.25 0 0119.5 6.75v10.5a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 17.25V6.75A2.25 2.25 0 016.75 4.5z"/></svg></div>
-              <div class="text-left">
-                <p class="feat-btn-title">Códigos con entrada asistida</p>
-                <p class="feat-btn-desc">Códigos como <code class="code-inline">*662*{tarjeta}#</code> o <code class="code-inline">#31#{número}#</code> te piden el dato antes de llamar.</p>
-              </div>
-            </button>
-
-            <button @click="feat = 'copy'" data-feat="copy" :class="feat === 'copy' ? 'feat-active' : 'feat-inactive'"
-              class="feat-btn">
-              <div class="feat-btn-icon"><svg class="w-5 h-5 text-navy dark:text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V5a2 2 0 012-2h9a2 2 0 012 2v9a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v9a2 2 0 002 2h9a2 2 0 002-2v-2M8 7h8v8"/></svg></div>
-              <div class="text-left">
-                <p class="feat-btn-title">Copiar al portapapeles</p>
-                <p class="feat-btn-desc">Un toque copia cualquier código para pegarlo donde lo necesites.</p>
-              </div>
-            </button>
-
-            <button @click="feat = 'mnemonics'" data-feat="mnemonics" :class="feat === 'mnemonics' ? 'feat-active' : 'feat-inactive'"
-              class="feat-btn">
-              <div class="feat-btn-icon"><svg class="w-5 h-5 text-navy dark:text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg></div>
-              <div class="text-left">
-                <p class="feat-btn-title">Nemotecnia integrada</p>
-                <p class="feat-btn-desc"><code class="code-inline">328 = DAT</code>, <code class="code-inline">266 = BON</code>, <code class="code-inline">869 = VOZ</code> — las letras del teclado te ayudan a recordar cada código.</p>
-              </div>
-            </button>
-
-            <button @click="feat = 'darkmode'" data-feat="darkmode" :class="feat === 'darkmode' ? 'feat-active' : 'feat-inactive'"
-              class="feat-btn">
-              <div class="feat-btn-icon"><svg class="w-5 h-5 text-navy dark:text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21.752 15.002A9.72 9.72 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/></svg></div>
-              <div class="text-left">
-                <p class="feat-btn-title">Modo claro y oscuro</p>
-                <p class="feat-btn-desc">Se adapta al sistema, o elígelo tú desde el ícono de la barra superior.</p>
-              </div>
-            </button>
-
-          </div>
-
-          <!-- Mockup card stack (right — desktop only) -->
-          <!-- PLACEHOLDER MOCKUPS — same note as the hero carousel above. -->
-          <div class="hidden lg:flex justify-center items-center" style="transform: scale(2);">
-            <div class="relative" style="width:10rem;height:21rem;">
-
-              <div x-show="feat === 'catalog'" x-transition.opacity.duration.400ms x-data="cardStack([
-                   {id:'home', light:'assets/mockups/home-view-light.svg', dark:'assets/mockups/home-view-dark.svg'},
-                 ], true)" class="absolute inset-0 select-none" style="touch-action:none;"
-                @pointerdown="startDrag($event)" @pointermove.window="drag($event)" @pointerup.window="endDrag()"
-                @pointercancel.window="endDrag()">
-                <template x-for="(card,i) in cards" :key="card.id">
-                  <div class="absolute inset-0" :style="fanStyle(i)"
-                    :class="i===0?'cursor-grab active:cursor-grabbing':'pointer-events-none'">
-                    <img :src="darkMode?card.dark:card.light" :alt="card.id"
-                      class="w-full h-full object-cover object-top rounded-[1.75rem] ring-1 ring-navy/40 dark:ring-accent/40"
-                      :class="i === 0 ? 'shadow-2xl shadow-black/40' : 'shadow-md shadow-black/10'" draggable="false" />
-                  </div>
-                </template>
-              </div>
-
-              <div x-show="feat === 'onetap'" x-transition.opacity.duration.400ms x-data="cardStack([
-                   {id:'detail', light:'assets/mockups/detail-view-light.svg', dark:'assets/mockups/detail-view-dark.svg'},
-                 ], true)" class="absolute inset-0 select-none" style="touch-action:none;"
-                @pointerdown="startDrag($event)" @pointermove.window="drag($event)" @pointerup.window="endDrag()"
-                @pointercancel.window="endDrag()">
-                <template x-for="(card,i) in cards" :key="card.id">
-                  <div class="absolute inset-0" :style="fanStyle(i)"
-                    :class="i===0?'cursor-grab active:cursor-grabbing':'pointer-events-none'">
-                    <img :src="darkMode?card.dark:card.light" :alt="card.id"
-                      class="w-full h-full object-cover object-top rounded-[1.75rem] ring-1 ring-navy/40 dark:ring-accent/40"
-                      :class="i === 0 ? 'shadow-2xl shadow-black/40' : 'shadow-md shadow-black/10'" draggable="false" />
-                  </div>
-                </template>
-              </div>
-
-              <div x-show="feat === 'input'" x-transition.opacity.duration.400ms x-data="cardStack([
-                   {id:'detail', light:'assets/mockups/detail-view-light.svg', dark:'assets/mockups/detail-view-dark.svg'},
-                 ], true)" class="absolute inset-0 select-none" style="touch-action:none;"
-                @pointerdown="startDrag($event)" @pointermove.window="drag($event)" @pointerup.window="endDrag()"
-                @pointercancel.window="endDrag()">
-                <template x-for="(card,i) in cards" :key="card.id">
-                  <div class="absolute inset-0" :style="fanStyle(i)"
-                    :class="i===0?'cursor-grab active:cursor-grabbing':'pointer-events-none'">
-                    <img :src="darkMode?card.dark:card.light" :alt="card.id"
-                      class="w-full h-full object-cover object-top rounded-[1.75rem] ring-1 ring-navy/40 dark:ring-accent/40"
-                      :class="i === 0 ? 'shadow-2xl shadow-black/40' : 'shadow-md shadow-black/10'" draggable="false" />
-                  </div>
-                </template>
-              </div>
-
-              <div x-show="feat === 'copy'" x-transition.opacity.duration.400ms x-data="cardStack([
-                   {id:'detail', light:'assets/mockups/detail-view-light.svg', dark:'assets/mockups/detail-view-dark.svg'},
-                 ], true)" class="absolute inset-0 select-none" style="touch-action:none;"
-                @pointerdown="startDrag($event)" @pointermove.window="drag($event)" @pointerup.window="endDrag()"
-                @pointercancel.window="endDrag()">
-                <template x-for="(card,i) in cards" :key="card.id">
-                  <div class="absolute inset-0" :style="fanStyle(i)"
-                    :class="i===0?'cursor-grab active:cursor-grabbing':'pointer-events-none'">
-                    <img :src="darkMode?card.dark:card.light" :alt="card.id"
-                      class="w-full h-full object-cover object-top rounded-[1.75rem] ring-1 ring-navy/40 dark:ring-accent/40"
-                      :class="i === 0 ? 'shadow-2xl shadow-black/40' : 'shadow-md shadow-black/10'" draggable="false" />
-                  </div>
-                </template>
-              </div>
-
-              <div x-show="feat === 'mnemonics'" x-transition.opacity.duration.400ms x-data="cardStack([
-                   {id:'home', light:'assets/mockups/home-view-light.svg', dark:'assets/mockups/home-view-dark.svg'},
-                 ], true)" class="absolute inset-0 select-none" style="touch-action:none;"
-                @pointerdown="startDrag($event)" @pointermove.window="drag($event)" @pointerup.window="endDrag()"
-                @pointercancel.window="endDrag()">
-                <template x-for="(card,i) in cards" :key="card.id">
-                  <div class="absolute inset-0" :style="fanStyle(i)"
-                    :class="i===0?'cursor-grab active:cursor-grabbing':'pointer-events-none'">
-                    <img :src="darkMode?card.dark:card.light" :alt="card.id"
-                      class="w-full h-full object-cover object-top rounded-[1.75rem] ring-1 ring-navy/40 dark:ring-accent/40"
-                      :class="i === 0 ? 'shadow-2xl shadow-black/40' : 'shadow-md shadow-black/10'" draggable="false" />
-                  </div>
-                </template>
-              </div>
-
-              <div x-show="feat === 'darkmode'" x-transition.opacity.duration.400ms x-data="cardStack([
-                   {id:'home',   light:'assets/mockups/home-view-light.svg',   dark:'assets/mockups/home-view-dark.svg'},
-                   {id:'detail', light:'assets/mockups/detail-view-light.svg', dark:'assets/mockups/detail-view-dark.svg'},
-                 ], true)" class="absolute inset-0 select-none" style="touch-action:none;"
-                @pointerdown="startDrag($event)" @pointermove.window="drag($event)" @pointerup.window="endDrag()"
-                @pointercancel.window="endDrag()">
-                <template x-for="(card,i) in cards" :key="card.id">
-                  <div class="absolute inset-0" :style="fanStyle(i)"
-                    :class="i===0?'cursor-grab active:cursor-grabbing':'pointer-events-none'">
-                    <img :src="darkMode?card.dark:card.light" :alt="card.id"
-                      class="w-full h-full object-cover object-top rounded-[1.75rem] ring-1 ring-navy/40 dark:ring-accent/40"
-                      :class="i === 0 ? 'shadow-2xl shadow-black/40' : 'shadow-md shadow-black/10'" draggable="false" />
-                  </div>
-                </template>
-              </div>
-
-            </div>
-          </div>
-        </div>
-        </div>
-        </div>
-      </div>
     </section>
 
     <!-- ════════════════════════════════════════
@@ -1040,7 +855,6 @@
         <div>
           <h4 class="text-gray-900 dark:text-white font-semibold mb-4 text-sm">Navegación</h4>
           <ul class="space-y-2 text-sm">
-            <li><a href="#features" class="footer-link">Funciones</a></li>
             <li><a href="#how-it-works" class="footer-link">Cómo funciona</a></li>
             <li><a href="#manual" class="footer-link">Manual de uso</a></li>
             <li><a href="#faq" class="footer-link">FAQ</a></li>
